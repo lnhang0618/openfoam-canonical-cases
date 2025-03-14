@@ -1,0 +1,46 @@
+FoamFile
+{
+    version         2.0;                // 文件版本
+    format          ascii;              // 文件格式
+    instance        "system";           // 实例名称
+    class           dictionary;         // 文件类别
+    object          perturbUDict;       // 对象名称
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+//该文件应位于constant
+
+// Expected turbulent Re(tau) Reynolds number with respect to utau
+Retau 220;                              // 预期的湍流雷诺数
+
+// Streamwise component of flow. 0=x, 1=y, 2=z
+streamwise 0;                           // 流动的流向分量，0表示x方向
+
+// Spanwise component of flow. 0=x, 1=y, 2=z
+spanwise 2;                             // 流动的跨流向分量，2表示z方向
+
+// Halfheight of channel. This is the direction normal to both streamwise and
+// spanwise directions.
+h 1.0;                                  // 通道的半高，垂直于流向和跨流向
+
+// Set (overwrite) velocity to laminar profile
+setBulk true;                          // 是否将速度设置为层流剖面，此操作会无视原始速度场，替换为层流剖面
+
+// Perturb velocity with some cosine like perturbations
+perturb true;                           // 是否用余弦扰动来扰动速度
+
+// Perturbation properties
+//wall normal circulation as a fraction of Ubar/utau
+duplus 0.25;                            // 壁面法向循环作为Ubar/utau的分数
+//spanwise perturbation spacing in wall units
+betaPlus 200;                           // 跨流向扰动间距，以壁面单位表示
+//streamwise perturbation spacing in wall units
+alphaPlus 500;                          // 流向扰动间距，以壁面单位表示
+//transverse decay
+sigma 0.00055;                          // 横向衰减系数
+//linear perturbation amplitude as a fraction of Ubar
+epsilon 0.005;                          // 线性扰动幅度作为Ubar的分数
+
+
+// ************************************************************************* //
+
