@@ -1,0 +1,10 @@
+#!/bin/sh
+cd ${0%/*} || exit 1                        # Run from this directory
+. $WM_PROJECT_DIR/bin/tools/CleanFunctions  # Tutorial clean functions
+#调用cleanCase0函数，清理案例目录中的初始和时间文件夹。但是保留网格文件夹constant/polyMesh。
+cleanCase0
+
+
+# Remove surfaces and features
+
+#------------------------------------------------------------------------------
