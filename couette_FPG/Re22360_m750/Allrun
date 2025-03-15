@@ -1,0 +1,33 @@
+#!/bin/sh
+cd ${0%/*} || exit 1                        # Run from this directory
+. $WM_PROJECT_DIR/bin/tools/RunFunctions    # Tutorial run functions
+touch channel_case.foam
+
+rm -rf 0
+rm -rf 0.orig
+sh -c "python3 ./system/block_create.py"
+blockMesh
+#fluent3DMeshToFoam fluent.msh
+cp -R ../0_RANS 0
+mapFields ../Re22360_back
+#cp -R ../PolyMesh constant/
+cp -R 0 0.orig
+#perturbUChannel
+# decomposePar -force
+#用于重新编号网格中的单元和点，以优化计算效率。
+#mpirun -np 20 renumberMesh -overwrite -parallel
+# mpirun -np 9 pimpleFoam -parallel | tee -a log.pimpleFoam
+# #mpirun -np 9 pimpleFoam -parallel >> log.pimpleFoam
+# #yhbatch -N 3 -n 108 -p bigmem cf.jhy
+
+# reconstructPar
+
+# sh -c "pvpython pvpyplot.py"
+# awk -f logs/foamLog.awk log.pimpleFoam
+# cd logs
+# gnuplot plot_commands.gp
+# #输出logs文件夹中pressureGradient文件的最后一行
+# tail -n 1 pressureGradient_avg
+
+
+#------------------------------------------------------------------------------
