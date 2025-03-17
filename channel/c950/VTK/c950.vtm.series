@@ -1,0 +1,7 @@
+{
+  "file-series-version" : "1.0",
+  "files" : [
+    { "name" : "c950_0.vtm", "time" : 0 },
+    { "name" : "c950_10000.vtm", "time" : 10000 }
+  ]
+}

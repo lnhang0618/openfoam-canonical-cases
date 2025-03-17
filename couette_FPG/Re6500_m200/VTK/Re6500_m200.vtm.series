@@ -1,0 +1,7 @@
+{
+  "file-series-version" : "1.0",
+  "files" : [
+    { "name" : "Re6500_m200_0.vtm", "time" : 0 },
+    { "name" : "Re6500_m200_10000.vtm", "time" : 10000 }
+  ]
+}

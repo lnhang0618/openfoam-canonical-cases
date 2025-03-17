@@ -1,0 +1,7 @@
+{
+  "file-series-version" : "1.0",
+  "files" : [
+    { "name" : "Re22360_m1000_0.vtm", "time" : 0 },
+    { "name" : "Re22360_m1000_20000.vtm", "time" : 20000 }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "file-series-version" : "1.0",
+  "files" : [
+    { "name" : "c4200_0.vtm", "time" : 0 },
+    { "name" : "c4200_10000.vtm", "time" : 10000 }
+  ]
+}
